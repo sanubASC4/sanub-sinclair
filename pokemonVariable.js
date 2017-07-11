@@ -1,0 +1,10 @@
+var bulbasaurHP = 45;
+var bulbasaurNum = 1;
+var bulbasaurType = "Grass + Poison";
+var bulbasaurBestMove = "Solar Beam";
+var bulbasaurEvo = False;
+var bulbasaurAtt = 49;
+var bulbasaurDef = 49;
+var bulbasaurSpeed = 45;
+var bulbasaurSpAtt = 65;
+var bulbasaurSpDef = 65;
