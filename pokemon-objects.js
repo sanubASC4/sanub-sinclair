@@ -12,7 +12,6 @@ var Zekrom = new Pokemon("Zekrom","Electric","100","150","120", true);
 var Reshiram = new Pokemon("Reshiram","Dragon","100","120","100",true);
 var Lucario = new Pokemon("Lucario","Fighting","70","110","70",false);
 var Charizard = new Pokemon("Charizard","Fire","200","120","150",false);
-
 var printRoster = [Blaziken, Krookodile, Zekrom, Reshiram, Lucario, Charizard];
 
 for(i = 0; i < printRoster.length; i++){

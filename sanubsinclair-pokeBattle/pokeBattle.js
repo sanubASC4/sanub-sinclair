@@ -13,14 +13,25 @@ function setup() {
     rect(250, 300, 200, 250,40,40,40,40);
     fill("red");
     rect(900, 300, 200, 250,40,40,40,40);
-}
-function mousePressed(){
     fill("white");
     rect(580,600,150,100);
-    alert(123);
-    if(mouseX is)
+}
+function mousePressed(){
+    if(mouseX >= 580 && mouseY >= 600 && mouseX <= 730 && mouseY <= 700){
+        //fill("red");
+        rect(580,600,150,100);
+        alert(123);
+       Pikachu.hp =( Pikachu.hp - Charizard.atk)
+       console.log(Pikachu.hp);
+    }
     
 }
+// function mouseReleased(){
+//      if(mouseX >= 580 && mouseY >= 600 && mouseX <= 730 && mouseY <= 700){
+//      rect(580,600,150,100);
+
+//      }
+// }
 var username = prompt("Please enter your name");
 
 function draw(){
@@ -48,10 +59,9 @@ function Pokemon(name, hp, atk, def){
     this.name = name;
     this.hp = hp;
     this.atk = atk;
-
 }
-var Charizard = new Pokemon("Charizard","Fire","200","120","150");
-var Pikachu = new Pokemon("Pikachu","Electric", "180","103","76");
+var Charizard = new Pokemon("Charizard",200,120);
+var Pikachu = new Pokemon("Pikachu",180,103);
 function battle(){
 
 }
