@@ -4,7 +4,7 @@
 
 function setup() {
     createCanvas(800, 800);
-    background("skyblue")
+    background("maroon")
    // var totalRows = table.getRowCount();
 
 }
