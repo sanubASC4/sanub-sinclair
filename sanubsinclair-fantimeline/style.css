@@ -1,0 +1,13 @@
+body {
+    background-image: url(pnb.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+p{
+    font-style: italic;
+}
+h1 {
+    font-size: 40px;
+
+}
