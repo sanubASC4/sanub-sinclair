@@ -8,20 +8,18 @@ $.ajax({
       var firstname = user.name.first;
       var lastname = user.name.last;
       var picture = user.picture.large;
+      var state
       var nat = user.nat;
       console.log();
       $("body").append("<h1>Hello I am " +suffix +" "+firstname+" "+lastname+"  "+picture+" "+nat+"</h1>");
-       funciton (){
-        
-        $.sketch({
-            url: 'https://restcountries.eu/rest/v2/name/{name}?fullText=true',
-            dataType: 'json'
-
-        });
-    }
     }
 });
+$.ajax({
+  url: 'https://restcountries.eu/rest/v2/name/{name}?fullText=true',
+  dataType: 'json',
+  success: function(data) {
    
-
+  }
+});
 
       
