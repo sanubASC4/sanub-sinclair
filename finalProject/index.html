@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>PAIRE</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="lib/css/style.css">
+<script src="https://use.fontawesome.com/f19385591b.js"></script>
+<script src="jquery.js"></script>
+<script src="sketch.js"></script>
+
+   <!--Reference platform.js library here-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!--Reference Client ID in meta tag here-->
+    <meta name="google-signin-client_id" content="683520432765-lg295sols82294kakel7p4l7fmhopi8f.apps.googleusercontent.com">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
 <style>
 html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
 </style>
-<body>
 
+<div class="signs">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" class="signOut" onclick="onSignOut();">Sign out</a>
+    </div>
 <!-- Links (sit on top) -->
-<div class="w3-top">
-  <div class="w3-row w3-large w3-light-grey">
-    <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block">Home</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#plans" class="w3-button w3-block">Plans</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block">About</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Contact</a>
-    </div>
+ <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#offers">What We Offer</a>
+    <a href="#plans">Pricing Plans</a>
+    <a href="#about">Who We Are</a>
+    <a href="#contact">Submit Incident</a>
   </div>
-</div>
+ </div>
 
 <!-- Content -->
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
@@ -39,6 +63,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <center> <h1><b>Welcome to PAIRE</b></h1></center>    
   </div>
 
+
+  </div>
   <!-- Slideshow -->
   <div class="w3-container">
     <div class="w3-display-container mySlides">
@@ -82,7 +108,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   </div>
   
   <!-- Grid -->
-  <div class="w3-row w3-container">
+  <div class="w3-row w3-container" id= "offers">
     <div class="w3-center w3-padding-64">
       <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
     </div>
@@ -92,17 +118,18 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
 
     <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
-      <h3>Branding</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <h3>School Supplies</h3>		
+      <p>Need school supplies? No worries we got you. Here at PAIRE we want to aid students in any way we can,
+         being students ourselves we understand sometimes school supplies can be expensive, limited and/ or hard to find that's why we have </p>
     </div>
 
     <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
-      <h3>Consultation</h3>
+      <h3>Consultations</h3>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     </div>
 
     <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
-      <h3>Promises</h3>
+      <h3>School Tips</h3>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     </div>
   </div>
@@ -110,8 +137,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <!-- Grid -->
   <div class="w3-row-padding" id="plans">
     <div class="w3-center w3-padding-64">
-      <h3>Pricing Plans</h3>
-      <p>Choose a pricing plan that fits your needs.</p>
+            <h3>Plans/ Projects</h3>
     </div>
     <div class="w3-third w3-margin-bottom">
       <ul class="w3-ul w3-border w3-center w3-hover-shadow">
@@ -122,7 +148,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         
         </p>
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-green w3-padding-large"><a href="https://www.w3schools.com">Learn More!</a></button>
+          <button class="w3-button w3-green w3-padding-large"><a href="index3.html">Learn More!</a></button>
         </li>
       </ul>
     </div>             
@@ -132,7 +158,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <li class="w3-dark-grey w3-xlarge w3-padding-32">Stop Bullying and Stand up Project</li>
         <p> Through out the United States one of the main problems schools have is bullying. PAIRE has a specifc role to decrease BULLYING, and by going to the bottom section where it states "Submit Incident", you can either leave an anonymous comment or upload a video of the users past or current situation. Futher, if we have more than 5 bullying incidents or more from a specifc school we will contact the NYC schools to address the problem. </p>
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-green w3-padding-large"><a href="https://www.w3schools.com">Learn More!</a></button>
+          <button class="w3-button w3-green w3-padding-large"><a href="index2.html">Learn More!</a></button>	
         </li>
       </ul>
       </div>
@@ -140,10 +166,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <ul class="w3-ul w3-border w3-center w3-hover-shadow">
         <li class="w3-black w3-xlarge w3-padding-32">School Tips</li>
          <li class="w3-padding-8"><p>Studying: Instead of reading to yourself, write it out 10 times</p></li>
-       <li class="w3-padding-8"><p>Sleeping Schedule: Drink water before bed; Put alarm across the room; Sleep in the dark</p></li>
+       <li class="w3-padding-8"><p>Sleeping: Drink water before bed; Put alarm across the room; Sleep in the dark</p></li>
         <li class="w3-padding-8"><p>Essays: Use scholar.google.com for more efficient results</p></li>
           <li class="w3-padding-8"><p>Schedule: To learn new schedule, save it as your phone lockscreen</p></li>
-            <li class="w3-padding-8"><p>Guys and Girls: They will always be there, just focus on school.</p></li>
         <li class="w3-light-grey w3-padding-24">
           <button class="w3-button w3-green w3-padding-large">More Tips Here</button>
         </li>
@@ -246,7 +271,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 <script>
-// Slideshow
+Slideshow
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -273,6 +298,25 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " w3-white";
 }
+
+
+// Scrolls to the selected menu item on the page
+        $(function() {
+            $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+</script>
 </script>
 
 </body>
+</html>
