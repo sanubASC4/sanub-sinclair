@@ -4,6 +4,8 @@
 <title>PAIRE</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,7 +32,19 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyChUq4F2UJGxuvj-GpHWfK6EqeKtTduGxo",
+    authDomain: "final-bfabd.firebaseapp.com",
+    databaseURL: "https://final-bfabd.firebaseio.com",
+    projectId: "final-bfabd",
+    storageBucket: "final-bfabd.appspot.com",
+    messagingSenderId: "949815530630"
+  };
+  firebase.initializeApp(config);
+</script>
 </head>
 
 <body>
@@ -39,12 +53,19 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+
+  /* #map {
+         height: 600px; 
+        width: 100%;
+      
+      } */
 </style>
 
-<div class="signs">
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <a href="#" class="signOut" onclick="onSignOut();">Sign out</a>
+    <div class="signs">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div> 
+        <div><a href="#" class="signOut" onclick="onSignOut();">Sign out</a></div>
     </div>
+     
 <!-- Links (sit on top) -->
  <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
@@ -53,22 +74,27 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <a href="#plans">Pricing Plans</a>
     <a href="#about">Who We Are</a>
     <a href="#contact">Submit Incident</a>
+    <a href="index3.html"> Live Counseling</a>
+    <a href="hi3.html"> Private Counseling</a>
   </div>
  </div>
-
 <!-- Content -->
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
   <div class="w3-panel">
-    <center> <h1><b>Welcome to PAIRE</b></h1></center>    
+    <center><p><font size="10"><b>Welcome to PAIRE</b><p>
+         <img src="http://static.tumblr.com/fb3aed4c8bb0cb8052b02eabe3636b6e/9tzhoyl/zxin4xc9v/tumblr_static_3uvpjsy8jdkw884cos40w8440.jpg" style="width:45%">
+   </center>
   </div>
-  </div>
+ 
   <!-- Slideshow -->
   <div class="w3-container">
     <div class="w3-display-container mySlides">
-     <center><img src="http://static.tumblr.com/fb3aed4c8bb0cb8052b02eabe3636b6e/9tzhoyl/zxin4xc9v/tumblr_static_3uvpjsy8jdkw884cos40w8440.jpg" style="width:45%"></center>
+    
       <div class="w3-display-topleft w3-container w3-padding-32">
       </div>
     </div>
+  </div>
     <div class="w3-display-container mySlides">
     <center><iframe width="800" height="515" src="https://www.youtube.com/embed/P8gUhXpoKFM" frameborder="0" ></iframe></center></div>
       <div class="w3-display-middle w3-container w3-padding-32">
@@ -102,16 +128,20 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
       </div>
     </div>
-  </div>
+</div>
   
+
+
   <!-- Grid -->
   <div class="w3-row w3-container" id= "offers">
     <div class="w3-center w3-padding-64">
       <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
     </div>
     <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
-      <h3>Design</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <h3>Bully Awareness</h3>
+    <p>We specifically offer feedback to schoolboards around the US so the school can take immediate action on incidents inside the school.
+       After 5 reports from one school and we rate the school to raise awareness of our cause to nearby families.
+    </p>
     </div>
 
     <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
@@ -122,12 +152,17 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
     <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
       <h3>Consultations</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p>This application offers a live chat open 24/7 where you can talk to a anyone currently on the app about an incident you had. 
+        We also have a page where we allow you to tell us your school name and to report an incident in which you or a friend 
+         experienced the incident. We also allow you to post a video of the occurence on this page. School boards are allowed
+          exclusive access to this page to view and solve the problem.</p>
     </div>
 
     <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
       <h3>School Tips</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p>Need back-to-school tips? Need advice on upcoming events? PAIRE offers everyday tips that our users can rely on to be helpful and accurate.
+         These tips are from former and current high school students who expeerience what our users have experienced down below. Just click the button
+          under school tips below. </p>
     </div>
   </div>
 
@@ -140,12 +175,14 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <ul class="w3-ul w3-border w3-center w3-hover-shadow">
         <li class="w3-black w3-xlarge w3-padding-32">Tutoring with a new spin</li>
        <p>
-         As a student its important to be on top of my grades but at times my grades would drop from straight A's to a couple B's here and there due to the material being tought was either challenging or I just needed a better explaination. PAIRE being a website to aid students with any educational support and decrease bullying indcients; helps any student to overcome their stuggles in school. So what makes us different from any tutoring services? For starters, we added a student tutoring service including the tutors strengths in topics and background info. For right now since we are developing PAIRE, student tutoring is located in New York more specifcally Manhattan's Public library. 
-
-        
+         As a student its important to be on top of my grades but at times my grades would drop from straight A's to a couple B's here and there due 
+         to the material being tought was either challenging or I just needed a better explaination. PAIRE being a website to aid students with any 
+         educational support and decrease bullying indcients; helps any student to overcome their stuggles in school. So what makes us different from 
+         any tutoring services? For starters, we added a student tutoring service including the tutors strengths in topics and background info. For right
+          now since we are developing PAIRE, student tutoring is located in New York more specifcally Manhattan's Public library.
         </p>
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-green w3-padding-large"><a href="index3.html">Learn More!</a></button>
+          <button class="w3-button w3-green w3-padding-large"><a href="hi2.html">Learn More!</a></button>
         </li>
       </ul>
     </div>             
@@ -153,7 +190,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <div class="w3-third w3-margin-bottom">
       <ul class="w3-ul w3-border w3-center w3-hover-shadow">
         <li class="w3-dark-grey w3-xlarge w3-padding-32">Stop Bullying and Stand up Project</li>
-        <p> Through out the United States one of the main problems schools have is bullying. PAIRE has a specifc role to decrease BULLYING, and by going to the bottom section where it states "Submit Incident", you can either leave an anonymous comment or upload a video of the users past or current situation. Futher, if we have more than 5 bullying incidents or more from a specifc school we will contact the NYC schools to address the problem. </p>
+        <p> Through out the United States one of the main problems schools have is bullying. PAIRE has a specifc role to decrease BULLYING, and by 
+          going to the bottom section where it states "Submit Incident", you can either leave an anonymous comment or upload a video of the users past
+           or current situation. Futher, if we have more than 5 bullying incidents or more from a specifc school we will contact the NYC schools to address the problem. </p>
         <li class="w3-light-grey w3-padding-24">
           <button class="w3-button w3-green w3-padding-large"><a href="index2.html">Learn More!</a></button>	
         </li>
@@ -162,12 +201,12 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-third w3-margin-bottom">
       <ul class="w3-ul w3-border w3-center w3-hover-shadow">
         <li class="w3-black w3-xlarge w3-padding-32">School Tips</li>
-         <li class="w3-padding-8"><p>Studying: Instead of reading to yourself, write it out 10 times</p></li>
-       <li class="w3-padding-8"><p>Sleeping: Drink water before bed; Put alarm across the room; Sleep in the dark</p></li>
+        <li class="w3-padding-8"><p>Studying: Instead of reading to yourself, write it out 10 times</p></li>
+        <li class="w3-padding-8"><p>Sleeping: Drink water before bed; Put alarm across the room; Sleep in the dark</p></li>
         <li class="w3-padding-8"><p>Essays: Use scholar.google.com for more efficient results</p></li>
-          <li class="w3-padding-8"><p>Schedule: To learn new schedule, save it as your phone lockscreen</p></li>
+        <li class="w3-padding-8"><p>Schedule: To learn new schedule, save it as your phone lockscreen</p></li>
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-green w3-padding-large">More Tips Here</button>
+          <button class="w3-button w3-green w3-padding-large"><a href="hi.html">More Tips Here</a></button>
         </li>
       </ul>
     </div>
@@ -184,7 +223,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <img src="/w3images/team1.jpg" alt="Leonard" style="width:100%">
         <div class="w3-container">
           <h3>Leonard Medina</h3>
-          <p class="w3-opacity">Founder</p>
+          <p class="w3-opacity">Back-end Developer</p>
           <p> Hey! My name is Leonard Medina I am a rising Senior at Inwood Early College. I started PAIRE due to personally going through a difficult situation in my life eventually turning to my school for support. Sadly, I witnessed the school staff lacked the skills and time to consult with me on my current situation. 
               Therefore, I did some reseach and asked around friends from other schools about there school staff and concluded most schools lack the skills to aid students ineed. Futher, as a young developer I had to take action and start a online school support system so I called up my two trusty web developers Sanub and Matt and here we are.    
           </p>
@@ -254,19 +293,18 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 <!-- Footer -->
 
+
+
 <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
   <h4></h4>
   <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
-
-
-
 <script>
 Slideshow
 var slideIndex = 1;
